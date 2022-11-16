@@ -4,18 +4,29 @@ const inputLetter = document.getElementById('carta-texto');
 const buttonCreate = document.getElementById('criar-carta');
 const generateText = document.getElementById('carta-gerada');
 
+// Classes
+const styleClass = ['magazine1', 'magazine2'];
+const sizeClass = ['medium', 'big', 'reallybig'];
+const rotateClass = ['rotateleft', 'rotateleft'];
+const skewrightClass = ['skewleft', 'skewright'];
+
 function createText() {
   generateText.innerText = '';
   const text = inputLetter.value;
-  console.log(text.length);
   const textSplit = text.split(' ');
+  // Verifica input
   if (text.replace(/\s/g, '').length === 0) {
     generateText.innerText = 'por favor, digite o conteúdo da carta.';
   }
+
+  // Cria span com palavras
   for (let i = 0; i < textSplit.length; i += 1) {
     const createSpan = document.createElement('span');
     createSpan.innerText = textSplit[i];
     generateText.appendChild(createSpan);
   }
+
+  // Adiciona classe aos span
+  
 }
 buttonCreate.addEventListener('click', createText);
