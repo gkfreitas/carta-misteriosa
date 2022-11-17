@@ -11,12 +11,14 @@ const sizeClass = ['medium', 'big', 'reallybig'];
 const rotateClass = ['rotateleft', 'rotateleft'];
 const skewClass = ['skewleft', 'skewright'];
 
+const letterCount = document.getElementById('carta-contador');
 // Classes modo aleatorio
 
 function createText() {
   generateText.innerText = '';
   const text = inputLetter.value;
   const textSplit = text.split(' ');
+  letterCount.innerText = textSplit.length;
   // Verifica input
   if (text.replace(/\s/g, '').length === 0) {
     generateText.innerText = 'por favor, digite o conteúdo da carta.';
@@ -29,7 +31,6 @@ function createText() {
     }
   }
 }
-
 
 // Adiciona classe aos span
 
